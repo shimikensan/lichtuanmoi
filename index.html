@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LỊCH TUẦN PHÒNG 7</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body onload="renderInfo()">
+    <div class="topHeader">
+        <button onclick="showModal1()">Khởi tạo</button>
+        <button onclick="showModal2()">Sửa</button>
+    </div>
+    <div class="titleMain" id="titleMain" onclick="showHeader()">
+        <p>LỊCH CÔNG TÁC TUẦN PHÒNG 7</p>
+        <p>(Tuần từ <span>12/06/2023</span> đến <span>19/06/2023</span>)</p>
+    </div>
+    <article>
+        <table id='table1' class="table1">
+            <tr>
+                <th>THỨ</th>
+                <th>THỜI GIAN</th>
+                <th>NỘI DUNG</th>
+                <th>ĐỊA ĐIỂM</th>
+                <th>THÀNH PHẦN</th>
+            </tr>
+        </table>
+        <marquee class="marginTop" direction="up">
+        <table id='table2' class="table1">
+            <tr>
+                <th>THỨ</th>
+                <th>THỜI GIAN</th>
+                <th>NỘI DUNG</th>
+                <th>ĐỊA ĐIỂM</th>
+                <th>THÀNH PHẦN</th>
+            </tr>
+            <tr>
+                <td>Thứ 2</td>
+                <td>09:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 3</td>
+                <td>10:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 2</td>
+                <td>09:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 3</td>
+                <td>10:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 2</td>
+                <td>09:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 3</td>
+                <td>10:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 2</td>
+                <td>09:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+            <tr>
+                <td>Thứ 3</td>
+                <td>10:30</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+                <td>Vui lòng nhập thông tin</td>
+            </tr>
+        </table>
+        </marquee>
+    </article>
+    <!-- Khởi tạo thông tin -->
+    <div class="modal1">
+        <div class="mainContent1">
+            <div class="closeBtn1">
+                <p onclick="hideModal1()">x</p>
+            </div>
+            <h2>Nhập thông tin hiển thị</h2>
+            <div class="formInput">
+                <div class="clearLS">
+                    <p onclick="clearLS()">Xóa lịch cũ</p>
+                </div>
+                <div class="form1">
+                    <h3>Thời gian làm việc:</h3>
+                    <form action="">
+                        <label for="timeFrom">Từ ngày</label>
+                        <input type="date" id="timeFrom">
+                        <label for="">đến ngày</label>
+                        <input type="date" id="timeTo">
+                        <p type="submit" onclick="addInfoWeek()">OK</p>
+                    </form>
+                </div>
+                <div class="form2">
+                    <h3>Nội dung thực hiện:</h3>
+                    <form action="">
+                        <div class="time1">
+                            <div class="week1">
+                                <label for="lang-select">Chọn Thứ:</label>
+                                    <select name="lang" id="lang-select">
+                                        <option value="thu2">Thứ 2</option>
+                                        <option value="thu3">Thứ 3</option>
+                                        <option value="thu4">Thứ 4</option>
+                                        <option value="thu5">Thứ 5</option>
+                                        <option value="thu6">Thứ 6</option>
+                                        <option value="thu7">Thứ 7</option>
+                                        <option value="chunhat">Chủ nhật</option>
+                                    </select>
+                            </div>
+                            <div class="hour">
+                                <label for="hour1">Chọn giờ</label>
+                                <input type="time" name="" id="hour1">
+                            </div>
+                        </div>
+                        <div class="content1">
+                            <div class="contentMain">
+                                <label for="">Nội dung:</label>
+                                <input type="text" id="content1a">
+                            </div>
+                            <div class="contentMain">
+                                <label for="">Địa điểm:</label>
+                                <input type="text" id="content1b">
+                            </div>
+                            <div class="contentMain">
+                                <label for="">Thành phần:</label>
+                                <input type="text" id="content1c">
+                            </div>
+                        </div>
+                        <p type="submit" onclick="addInfoMain()">Thêm</p>
+                    </form>
+                </div>
+            </div>
+            <div class="finish1">
+                <button onclick="renderInfo()">HOÀN TẤT</button>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Chỉnh sửa thông tin -->
+    <div class="modal2">
+        <div class="editInfo">
+            <div class="btnClose2">
+                <p onclick="hideModal2()">x</p>
+            </div>
+            <h3>CHỈNH SỬA NỘI DUNG</h3>
+            <div class="table3">
+                <table id="table3">
+                    <tr>
+                        <th>THỨ</th>
+                        <th>THỜI GIAN</th>
+                        <th>NỘI DUNG</th>
+                        <th>ĐỊA ĐIỂM</th>
+                        <th>THÀNH PHẦN</th>
+                        <th>TÙY CHỌN</th>
+                    </tr>
+                    <div class="scroll"></div>
+                    <tr>
+                        <td>
+                            <select name="lang" id="lang-select2">
+                                <option value="thu2">Thứ 2</option>
+                                <option value="thu3">Thứ 3</option>
+                                <option value="thu4">Thứ 4</option>
+                                <option value="thu5">Thứ 5</option>
+                                <option value="thu6">Thứ 6</option>
+                                <option value="thu7">Thứ 7</option>
+                                <option value="chunhat">Chủ nhật</option>
+                        </select></td>
+                        <td><input type="time" name="" id="hour2"></td>
+                        <td><input type="text" id="content2a"></td>
+                        <td><input type="text" id="content2b"></td>
+                        <td><input type="text" id="content2c"></td>
+                        <td><button>Sửa</button><button>Xóa</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/main.js"></script>
+</body>
+</html>
